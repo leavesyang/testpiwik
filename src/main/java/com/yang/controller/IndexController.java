@@ -20,10 +20,6 @@ import java.util.Map;
 //import org.slf4j.MDC;
 //import org.slf4j.LoggerFactory;
 
-//test github
-//test github
-//test github
-
 @Controller
 @RequestMapping
 public class IndexController {
