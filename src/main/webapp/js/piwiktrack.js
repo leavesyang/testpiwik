@@ -14,6 +14,7 @@ trackPageView();
 	// var u = "//10.18.160.20/project/piwik/";
 	_paq.push([ 'setTrackerUrl', u + 'piwik.php' ]);
 	_paq.push([ 'setSiteId', '10' ]);
+
 	var d = document, g = d.createElement('script'), s = d
 			.getElementsByTagName('script')[0];
 	g.type = 'text/javascript';
@@ -25,6 +26,7 @@ trackPageView();
 
 /* 记录页面， trackPageView */
 function trackPageView() {
+    _paq.push(["trackAllContentImpressions"]);
 	_paq.push([ 'setUserId', getUserInfo() ]); // 用户工号作为userID
 	_paq.push([ 'setCustomDimension', 1, getUserInfo() ]); // 用户工号
 	_paq.push([ 'trackPageView' ]);
@@ -36,6 +38,7 @@ window.addEventListener('click', function(e) {
 	setTimeout(function() {
 		if (e.target.localName == "button") {
 			var buttonText = e.target.innerText.replace(/\s+/g, "");
+            _paq.push(["trackAllContentImpressions"]);
 			_paq.push([ 'setUserId', getUserInfo() ]); // 用户工号作为userID
 			_paq.push([ 'setCustomDimension', 1, getUserInfo() ]); // 用户工号
 			_paq.push([ 'setCustomDimension', 2, "" + buttonText ]); // 按钮的文本

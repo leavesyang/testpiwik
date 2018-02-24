@@ -2,8 +2,9 @@ package com.yang.testpiwik.controller;
 
 import com.yang.testpiwik.util.ApiService;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.log4j.Logger;
-import org.apache.log4j.MDC;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-//import org.slf4j.Logger;
-//import org.slf4j.MDC;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.MDC;
 //import org.slf4j.LoggerFactory;
 
 
@@ -28,8 +29,8 @@ public class IndexController {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    Logger log = Logger.getLogger(this.getClass().getName());
-    // private Logger log = LoggerFactory.getLogger(IndexController.class);
+//    Logger log = Logger.getLogger(this.getClass().getName());
+     private Logger log = LoggerFactory.getLogger(IndexController.class);
 
     @Autowired
     ApiService apiService;
